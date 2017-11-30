@@ -304,7 +304,7 @@ int run(int argc, char **argv)
                    // URHO3D_LOGINFO("Timestamp: " + Urho3D::String(Timestamp));
                     //                  std::cout << "Timestamp as is: " << std::dec << temp << "  " << std::hex << temp <<  endl;
                     //                  std::cout << "Timestamp: " << std::dec << time << "  " << std::hex << time <<  endl;
-                    //nFrames++;
+                    nFrames++;
 
 
                     uint8_t Pan_SpeedPot = (uint8_t) buffer[4];
@@ -320,12 +320,7 @@ int run(int argc, char **argv)
                     int32_t Roll_Position = (int32_t) __builtin_bswap32(*(uint32_t*)&buffer[21]);
 
                     uint8_t Direction_Switches = buffer[25];
-
-
-
                     uint8_t Auxilliary_Switches = buffer[26];
-
-                    newFrame = true;
 
 
                 }
