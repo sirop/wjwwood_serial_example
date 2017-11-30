@@ -300,26 +300,26 @@ int run(int argc, char **argv)
                 if (__builtin_bswap16(temp)==*(uint16_t*)&buffer[34])
                 {
                    // temp = *(uint16_t*)&buffer[2];
-                    Timestamp = __builtin_bswap16(*(uint16_t*)&buffer[2]);
+                    uint16_t Timestamp = __builtin_bswap16(*(uint16_t*)&buffer[2]);
                    // URHO3D_LOGINFO("Timestamp: " + Urho3D::String(Timestamp));
                     //                  std::cout << "Timestamp as is: " << std::dec << temp << "  " << std::hex << temp <<  endl;
                     //                  std::cout << "Timestamp: " << std::dec << time << "  " << std::hex << time <<  endl;
                     //nFrames++;
 
 
-                    Pan_SpeedPot = (uint8_t) buffer[4];
-                    Pan_Velocity = __builtin_bswap16(*(uint16_t*)&buffer[5]);
-                    Pan_Position = (int32_t) __builtin_bswap32(*(uint32_t*)&buffer[7]);
+                    uint8_t Pan_SpeedPot = (uint8_t) buffer[4];
+                    int16_t Pan_Velocity = __builtin_bswap16(*(uint16_t*)&buffer[5]);
+                    int32_t Pan_Position = (int32_t) __builtin_bswap32(*(uint32_t*)&buffer[7]);
 
-                    Tilt_SpeedPot = buffer[11];
-                    Tilt_Velocity = __builtin_bswap16(*(uint16_t*)&buffer[12]);
-                    Tilt_Position = (int32_t) __builtin_bswap32(*(uint32_t*)&buffer[14]);
+                    uint8_t Tilt_SpeedPot = buffer[11];
+                    int16_t Tilt_Velocity = __builtin_bswap16(*(uint16_t*)&buffer[12]);
+                    int32_t Tilt_Position = (int32_t) __builtin_bswap32(*(uint32_t*)&buffer[14]);
 
-                    Roll_SpeedPot = buffer[18];
-                    Roll_Velocity = __builtin_bswap16(*(uint16_t*)&buffer[19]);
-                    Roll_Position = (int32_t) __builtin_bswap32(*(uint32_t*)&buffer[21]);
+                    uint8_t Roll_SpeedPot = buffer[18];
+                    int16_t Roll_Velocity = __builtin_bswap16(*(uint16_t*)&buffer[19]);
+                    int32_t Roll_Position = (int32_t) __builtin_bswap32(*(uint32_t*)&buffer[21]);
 
-                    Direction_Switches = buffer[25];
+                    uint8_t Direction_Switches = buffer[25];
                     temp = Direction_Switches & 0x0003;
                     if (temp==0x0001)
                         Direction_Switches_Pan = 1.0f;
@@ -351,7 +351,7 @@ int run(int argc, char **argv)
                     }
 
 
-                    Auxilliary_Switches = buffer[26];
+                    uint8_t Auxilliary_Switches = buffer[26];
 
                     newFrame = true;
 
