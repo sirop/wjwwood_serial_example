@@ -26,7 +26,7 @@ macos: LIBS += -framework Foundation.framework
 macos: LIBS += -framework IOKit.framework
 macos: LIBS += -L/Users/mike/serial/lib -lserial
 #macos: LIBS += serial.lib
-macos: INCLUDEPATH += /Users/mike/serial/include/serial /Users/mike/serial/include/serial/impl
+macos: INCLUDEPATH += /Users/mike/serial/include /Users/mike/serial/include/serial/impl
 #//Dependencies for the target
 #serial_LIB_DEPENDS:STATIC=general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Foundation.framework;general; \
 #/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/IOKit.framework;
