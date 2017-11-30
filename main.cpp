@@ -320,35 +320,7 @@ int run(int argc, char **argv)
                     int32_t Roll_Position = (int32_t) __builtin_bswap32(*(uint32_t*)&buffer[21]);
 
                     uint8_t Direction_Switches = buffer[25];
-                    temp = Direction_Switches & 0x0003;
-                    if (temp==0x0001)
-                        Direction_Switches_Pan = 1.0f;
-                    else {
-                        if (temp==0x0002)
-                            Direction_Switches_Pan = -1.0f;
-                        else
-                            Direction_Switches_Pan = 0.0f;
-                    }
 
-                    temp = Direction_Switches & (0x0003<<2);
-                    if (temp==0x0004)
-                        Direction_Switches_Tilt = 1.0f;
-                    else {
-                        if (temp==0x0008)
-                            Direction_Switches_Tilt = -1.0f;
-                        else
-                            Direction_Switches_Tilt = 0.0f;
-                    }
-
-                    temp = Direction_Switches & (0x0030);
-                    if (temp==0x0010)
-                        Direction_Switches_Roll = 1.0f;
-                    else {
-                        if (temp==0x0020)
-                            Direction_Switches_Roll = -1.0f;
-                        else
-                            Direction_Switches_Roll = 0.0f;
-                    }
 
 
                     uint8_t Auxilliary_Switches = buffer[26];
